@@ -1,0 +1,102 @@
+/* Reset Styles */
+<link href = "https://fonts.googleapis.com/css2?family=Montaga&display=swap" rel="stylesheet">
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Global Styles */
+  body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    /* padding: 0.3rem; */
+  }
+  
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    /* padding: 0 20px; */
+  }
+  
+  /* Header Styles */
+  header {
+    /* background-color:#37306B; */
+    margin: 0;
+    background-color:#37306B;
+    
+  }
+  
+  header h1 {
+    margin:0px;
+    color: #fff;
+    font-size: 120px;
+    font-weight: 700;
+    text-align: center;
+  }
+  
+ 
+  .primary-button{
+    background-color:#fff;
+    border-radius: 6px;
+    font-weight: 700;
+    padding: 5px 10px;
+    color:#37306B;
+    box-shadow: 0 0 2px black;
+    transition: 0.2s ease-out;
+}
+.primary-button:hover{
+  background-color:#6f62d3 ;
+  color: #37306B ;
+}
+/* Add a black background color to the top navigation */
+.topnav {
+  display:flex;
+justify-content:end;
+gap:40px;
+padding:25px;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+color:#fff;
+float: left;
+text-align: center;
+text-decoration: none;
+font-size: 16px;
+}
+.topnav a:hover{
+  text-decoration: underline;
+font-size: 18px;
+}
+.cover img{
+  max-width:100%;
+  height:auto;
+}
+     /* Footer Styles */
+    footer {
+      background-color:#37306B;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+    }
+    
+    footer p {
+      font-size: 0.8rem;
+    }
+    
+    /* Responsive Styles */
+    @media (max-width: 767px) {
+    header h1 {
+    font-size: 80px;
+    }
+    
+    .topnav{
+    flex-direction: column;
+    gap:5px;
+    }
+    
+  }

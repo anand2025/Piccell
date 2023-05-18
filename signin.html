@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Piccell-Sign In</title>
+<style>
+    /* styles.css */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  
+}
+
+header {
+  padding: 20px;
+  color: #37306B;
+}
+
+main {
+  padding: 20px;
+}
+
+.hero {
+  color:#37306B;
+  padding: 100px 0;
+}
+
+.hero h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 40px;
+  color: #37306B;
+  
+}
+
+.auth-form {
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.auth-form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+.auth-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 3px;
+  border: 1px solid #cfcaf2;
+}
+
+.auth-form button {
+  background-color: #37306B;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.auth-form button:hover {
+  background-color: #5c558b;
+}
+
+.auth-form p {
+  margin-top: 20px;
+}
+
+.auth-form a {
+  color: #37306B;
+  text-decoration: underline;
+}
+html {
+  height:100%;
+}
+
+body {
+  margin:0;
+}
+
+.bg {
+  animation:slide 3s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg,#b4ade5 50%, #37306B 50%);
+  bottom:0;
+  left:-50%;
+  opacity:.5;
+  position:fixed;
+  right:-50%;
+  top:0;
+  z-index:-1;
+}
+
+.bg2 {
+  animation-direction:alternate-reverse;
+  animation-duration:4s;
+}
+
+.bg3 {
+  animation-duration:5s;
+}
+
+.content {
+  background-color:rgba(255,255,255,.8);
+  border-radius:.25em;
+  box-shadow:0 0 .25em rgba(0,0,0,.25);
+  box-sizing:border-box;
+  left:50%;
+  padding:10vmin;
+  position:fixed;
+  text-align:center;
+  top:50%;
+  transform:translate(-50%, -50%);
+}
+@keyframes slide {
+  0% {
+    transform:translateX(-25%);
+  }
+  100% {
+    transform:translateX(25%);
+  }
+}
+
+
+</style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div>
+<div class="content">
+      <h2>Welcome to PicCell Club</h2>
+      <p>Capture the moments, cherish the memories</p>
+      <div class="auth-form">
+        
+        <form id="signin-form">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+          
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required>
+          
+          <button type="submit">Sign In</button>
+        </form>
+        <p>Don't have an account? <a href="signup.html">Sign up</a></p>
+      </div>
+    </section>
+  </main>
+  
+ 
+  
+  <script>
+    // Initialize Firebase
+const firebaseConfig = {
+  // Your Firebase configuration
+};
+
+firebase.initializeApp(firebaseConfig);
+
+// Handle sign-in form submission
+const signinForm = document.getElementById('signin-form');
+signinForm.addEventListener('submit', (e) => {
+  e.preventDefault(); // Prevent form submission
+
+  // Get user input
+  const email = signinForm.email.value;
+  const password = signinForm.password.value;
+
+  // Sign in user with email and password
+  firebase.auth().signInWithEmailAndPassword(email, password)
+    .then((userCredential) => {
+      // User signed in successfully
+      const user = userCredential.user;
+      console.log('Signed in:', user);
+      // Redirect or perform any desired action
+    })
+    .catch((error) => {
+      // Handle sign-in errors
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.error('Sign-in error:', errorCode, errorMessage);
+      // Display error message to the user
+    });
+});
+
+  </script>
+</body>
+</html>

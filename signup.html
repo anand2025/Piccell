@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PicCell- Sign Up</title>
+  <style>
+    /* styles.css */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+ 
+}
+h1{
+    color: #37306B;
+  }
+header {
+  padding: 20px;
+  
+}
+.auth-section {
+  padding: 16px 0;
+}
+
+.auth-form {
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.auth-form h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.auth-form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+.auth-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 3px;
+  border: 1px solid #cfcaf2;
+}
+
+.auth-form button {
+  background-color: #37306B;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.auth-form button:hover {
+  background-color: #5c558b;
+}
+
+.auth-form p {
+  margin-top: 20px;
+}
+
+.auth-form a {
+  color: #37306B;
+  text-decoration: underline;
+}
+html {
+  height:100%;
+}
+
+body {
+  margin:0;
+}
+
+.bg {
+  animation:slide 3s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, #b4ade5 50%, #37306B 50%);
+  bottom:0;
+  left:-50%;
+  opacity:.5;
+  position:fixed;
+  right:-50%;
+  top:0;
+  z-index:-1;
+}
+
+.bg2 {
+  animation-direction:alternate-reverse;
+  animation-duration:4s;
+}
+
+.bg3 {
+  animation-duration:5s;
+}
+
+.content {
+  background-color:rgba(255,255,255,.8);
+  border-radius:.25em;
+  box-shadow:0 0 .25em rgba(0,0,0,.25);
+  box-sizing:border-box;
+  left:50%;
+  padding:10vmin;
+  position:fixed;
+  text-align:center;
+  top:50%;
+  transform:translate(-50%, -50%);
+}
+@keyframes slide {
+  0% {
+    transform:translateX(-25%);
+  }
+  100% {
+    transform:translateX(25%);
+  }
+}
+  </style>
+</head>
+<body>
+  <div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div>
+<div class="content">
+    <div class="auth-section">
+      <h1>Create an Account</h1>
+      <div class="auth-form">
+        <form id="signup-form">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+          
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+          
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required>
+          
+          <button type="submit">Sign Up</button>
+        </form>
+        <p>Already have an account? <a href="signin.html">Sign in</a></p>
+      </div>
+    </div>
+  
+  
+  
+  
+  <script>
+    // Initialize Firebase
+const firebaseConfig = {
+  // Your Firebase configuration
+};
+
+firebase.initializeApp(firebaseConfig);
+
+// Handle sign-up form submission
+const signupForm = document.getElementById('signup-form');
+signupForm.addEventListener('submit', (e) => {
+  e.preventDefault(); // Prevent form submission
+
+  // Get user input
+  const name = signupForm.name.value;
+  const email = signupForm.email.value;
+  const password = signupForm.password.value;
+
+  // Create user with email and password
+  firebase.auth().createUserWithEmailAndPassword(email, password)
+    .then((userCredential) => {
+      // User created successfully
+      const user = userCredential.user;
+      console.log('User created:', user);
+      // Redirect or perform any desired action
+    })
+    .catch((error) => {
+      // Handle sign-up errors
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.error('Sign-up error:', errorCode, errorMessage);
+      // Display error message to the user
+    });
+});
+
+  </script>
+</body>
+</html>

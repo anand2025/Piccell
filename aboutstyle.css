@@ -1,0 +1,129 @@
+/* Reset default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body styles */
+  body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    cursor:crosschair;
+  }
+  
+  /* Navigation Bar styles */
+  nav {
+    background-color: #37306B;
+    color: #fff;
+    padding: 1rem;
+    display: flex;
+    justify-content: end;
+    gap:40px;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+  }
+  
+  nav ul li {
+    margin-right: 2rem;
+  }
+  
+  nav ul li:last-child {
+    margin-right: 0;
+  }
+  
+  nav a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  nav a:hover {
+    text-decoration: underline;
+    font-size:18px;
+  }
+  
+  /* Header styles */
+  header {
+    background-image: linear-gradient(180deg, #37306B, black);
+    /* background-color: #37306B; */
+    color: #fff;
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+  
+  header h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  .flex{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+  .typewriter{
+      overflow: hidden; /* Ensures the content is not revealed until the animation */
+      border-right: .12em solid black; /* The typwriter cursor */
+      white-space: nowrap; /* Keeps the content on a single line */
+      margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+      letter-spacing: .12em; /* Adjust as needed */
+      animation: 
+        typing 3.5s steps(40, end),
+        blink-caret .75s step-end infinite;
+    }
+     /* The typing effect */
+     @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+    
+    /* The typewriter cursor effect */
+    @keyframes blink-caret {
+      from, to { border-color: transparent }
+      50% { border-color: black; }
+  }
+  
+    .cameraperson img{
+      max-width:70%;
+      
+    }
+   
+  /* Content styles */
+  .content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  .content h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .content p {
+    margin-bottom: 2rem;
+    margin-left:2rem;
+  }
+  
+  /* Footer styles */
+  footer {
+    background-color: #ccc;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  footer p {
+    font-size: 0.8rem;
+  }
+  @media (max-width: 1000px) {
+    
+    .flex{
+    flex-direction: column-reverse;
+    }
+    
+  }

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Submit a Photo - IIIT Ranchi Photography Club</title>
+    <link rel="stylesheet" href="submit.css">
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="aboutme.html">About Us</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="submit.html">Submit a Photo</a></li>
+      </ul>
+    </nav>
+    
+    <!-- Header Section -->
+    <header>
+      <h1>Submit a Photo</h1>
+    </header>
+    <div class="submit">
+    <div class="photographer">
+      <img src="photographer.jpg" alt="phographer">
+    </div>
+    <!-- Content Section -->
+    <div class="content">
+      <p>
+        Thank you for your interest in submitting a photo to the IIIT Ranchi Photography Club! We welcome submissions from our members and the wider community.
+      </p>
+      <form id="photo-form" method="post" action="submit.php">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        
+        <label for="photo">Photo:</label>
+        <input type="file" id="photo" name="photo" accept="image/*" required>
+        
+        <label for="caption">Caption:</label>
+        <textarea id="caption" name="caption" required></textarea>
+        
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+  </div>
+    <!-- Footer Section -->
+    <footer>
+      <p>&copy; 2023 IIIT Ranchi Photography Club. All rights reserved.</p>
+    </footer>
+    
+    <!-- JavaScript Section -->
+    <script>
+      const form = document.getElementById('photo-form');
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const formData = new FormData(form);
+        fetch(form.action, {
+          method: form.method,
+          body: formData
+        })
+        .then(response => {
+          if (response.ok) {
+            alert('Your photo has been submitted successfully!');
+            form.reset();
+          } else {
+            alert('Sorry, an error occurred. Please try again later.');
+          }
+        })
+        .catch(error => {
+          alert('Sorry, an error occurred. Please try again later.');
+        })
+      });
+    </script>
+    
+  </body>
+</html>
