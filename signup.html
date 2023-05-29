@@ -145,45 +145,5 @@ body {
         <p>Already have an account? <a href="signin.html">Sign in</a></p>
       </div>
     </div>
-  
-  
-  
-  
-  <script>
-    // Initialize Firebase
-const firebaseConfig = {
-  // Your Firebase configuration
-};
-
-firebase.initializeApp(firebaseConfig);
-
-// Handle sign-up form submission
-const signupForm = document.getElementById('signup-form');
-signupForm.addEventListener('submit', (e) => {
-  e.preventDefault(); // Prevent form submission
-
-  // Get user input
-  const name = signupForm.name.value;
-  const email = signupForm.email.value;
-  const password = signupForm.password.value;
-
-  // Create user with email and password
-  firebase.auth().createUserWithEmailAndPassword(email, password)
-    .then((userCredential) => {
-      // User created successfully
-      const user = userCredential.user;
-      console.log('User created:', user);
-      // Redirect or perform any desired action
-    })
-    .catch((error) => {
-      // Handle sign-up errors
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      console.error('Sign-up error:', errorCode, errorMessage);
-      // Display error message to the user
-    });
-});
-
-  </script>
 </body>
 </html>
