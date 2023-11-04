@@ -5,7 +5,6 @@ It is a frontend project developed for the PicCell Club at IIIT Ranchi. The webs
 ## Features
 The PicCell Club Website offers the following key features:
 <br />
-<br />
 >Sign in /Sign up<br />
 Sign up page
 <br />
