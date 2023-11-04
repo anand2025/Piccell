@@ -4,21 +4,21 @@ It is a frontend project developed for the PicCell Club at IIIT Ranchi. The webs
 
 ## Features
 The PicCell Club Website offers the following key features:
-## Sign in /Sign up
+Sign in /Sign up<br />
 Sign up page
-## Landing Page: 
+Landing Page:<br /> 
 The landing page introduces the club and highlights its activities. It engages visitors with captivating visuals and a brief overview.
-## Photo Gallery: 
+Photo Gallery:<br />
 The photo gallery displays a collection of captivating photographs taken by club members. Visitors can browse through the gallery and appreciate the artistic work.
-## Submit Photos: 
+Submit Photos:<br />
 Club members can submit their own photos through the website. The submitted photos are reviewed and added to the gallery to be showcased to a wider audience.
-## About Page:
+About Page:<br />
 The about page provides detailed information about the club, its objectives, and the team behind it. It gives visitors an insight into the club's vision and mission.
-## Responsive Design:
+Responsive Design:<br />
 The website is designed to be responsive, ensuring an optimal viewing experience across different devices and screen sizes.
  
 ## Technologies Used
 The PicCell Club Website is built using the following technologies:
-HTML5: For structuring the web pages.
-CSS3: For styling and layout purposes.
-JavaScript: For interactive functionality and event handling
+HTML5: For structuring the web pages.<br />
+CSS3: For styling and layout purposes.<br />
+JavaScript: For interactive functionality and event handling<br />
